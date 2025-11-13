@@ -1,0 +1,391 @@
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-image: url('images/im2.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.4);
+      /* escurece */
+      z-index: -1;
+    }
+
+    .container {
+      background-color: #f5d4ca;
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .logo img {
+      width: 150px;
+    }
+
+    .title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .description {
+      margin-bottom: 20px;
+      font-size: 16px;
+      color: #333;
+    }
+
+    input[type="email"] {
+      width: 100%;
+      padding: 12px 16px;
+      border: none;
+      border-radius: 10px;
+      margin-bottom: 16px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    button.continue {
+      width: 100%;
+      padding: 12px;
+      background-color: #4b2e17;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-bottom: 20px;
+    }
+
+    button.cadastrar {
+      width: 100%;
+      padding: 12px;
+      background-color: #fcebe5;
+      color: #888;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+
+    .divider {
+      margin: 20px 0;
+      color: #888;
+      font-size: 14px;
+      position: relative;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 40%;
+      height: 1px;
+      background: #aaa;
+    }
+
+    .divider::before {
+      left: 0;
+    }
+
+    .divider::after {
+      right: 0;
+    }
+
+    .google-login-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background-color: #fcebe5;
+      border: none;
+      border-radius: 8px;
+      padding: 12px;
+      width: 100%;
+      font-size: 16px;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+
+    .terms {
+      font-size: 12px;
+      color: #444;
+      margin-top: 20px;
+    }
+
+    .terms a {
+      color: #333;
+      text-decoration: underline;
+    }
+
+    .content {
+      background-color: #fcebe5;
+      border-radius: 5%;
+      width: 25%;
+      padding: 50px 10px;
+    }
+
+    .content .profile-picture img {
+      width: 100%;
+      max-width: 100px;
+      border-radius: 50%;
+    }
+
+    .content .profile-details {
+      display: flex;
+      flex-flow: column;
+      padding: 10px 0;
+    }
+
+    .content .profile-details>div {
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #f1f2f5;
+      margin-bottom: 15px;
+      padding-bottom: 15px;
+    }
+
+    .content .profile-details>div .icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background-color: #9196a5;
+      margin-right: 15px;
+      font-size: 14px;
+    }
+
+    .content .profile-details>div .icon svg {
+      fill: #fff;
+    }
+
+    .content .profile-details>div strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .content .profile-details>div:last-child {
+      border-bottom: none;
+    }
+
+    .content .logout-btn {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      color: #fff;
+      width: 100%;
+      overflow: hidden;
+      border-radius: 5px;
+      background-color: #f28b8b;
+      cursor: pointer;
+    }
+
+    .content .logout-btn .icon {
+      display: inline-flex;
+      height: 100%;
+      padding: 15px 20px;
+      align-items: center;
+      justify-content: center;
+      background-color: #f28b8b;
+      margin-right: 15px;
+    }
+
+    .content .logout-btn .icon svg {
+      fill: #fff;
+    }
+
+    .content .logout-btn:hover {
+      background-color: #f28b8b;
+    }
+
+    .content .logout-btn:hover .icon {
+      background-color: #f28b8b;
+    }
+
+    @media (max-width: 500px) {
+      .container {
+        margin: 20px;
+      }
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Capriola&display=swap');
+
+    :root {
+      --reg-bg: #f5d4ca;
+      --accent: #7bb7e2;
+      --text-dark: #4a2c2a;
+    }
+
+    /* Container principal da página de registro */
+    .register-wrap {
+      max-width: 420px;
+      margin: 48px auto;
+      padding: 28px;
+      background: var(--reg-bg);
+      border-radius: 16px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    }
+
+    /* Cabeçalho pequeno com link de login */
+    .register-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .register-header h2 {
+      margin: 0;
+      color: var(--text-dark);
+      font-size: 20px;
+    }
+
+    .register-login-link {
+      font-size: 13px;
+      color: #7a4a4a;
+    }
+
+    /* Formulário e campos */
+    .register-form {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .input-field {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 10px;
+      border: none;
+      font-size: 15px;
+      box-sizing: border-box;
+      background: #fff;
+      color: #333;
+      box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.03);
+    }
+
+    .field-row {
+      display: flex;
+      gap: 12px;
+    }
+
+    .half {
+      flex: 1;
+    }
+
+    /* Botões */
+    .btn-row {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 6px;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .btn-secondary {
+      background: #fff;
+      color: var(--text-dark);
+      border: none;
+      padding: 10px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    /* Ajuda / erros */
+    .help {
+      font-size: 13px;
+      color: #6b4b4b;
+      text-align: center;
+      margin-top: 8px;
+    }
+
+    .small-link {
+      color: #333;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .error {
+      color: #c23a3a;
+      font-size: 13px;
+      text-align: center;
+    }
+
+    /* Responsivo */
+    @media (max-width: 480px) {
+      .register-wrap {
+        margin: 20px;
+        padding: 20px;
+      }
+
+      .btn-row {
+        flex-direction: column;
+      }
+    }
+
+    .btn-login {
+      width: 100%;
+      background: #4b2b20;
+      color: #fff;
+      border: none;
+      padding: 12px 16px;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0 6px 14px rgba(75, 43, 32, 0.18);
+      transition: transform .08s ease, box-shadow .12s ease, opacity .12s;
+      display: inline-block;
+    }
+
+    .btn-login:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 20px rgba(75, 43, 32, 0.18);
+    }
+
+    .btn-login:active {
+      transform: translateY(0);
+      box-shadow: 0 6px 12px rgba(75, 43, 32, 0.12);
+    }
+
+    /* mantem campos consistentes */
+    .input-field {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 10px;
+      border: none;
+      font-size: 15px;
+      box-sizing: border-box;
+      background: #fff;
+      color: #333;
+      box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.03);
+    }
