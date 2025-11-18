@@ -1,7 +1,6 @@
-
 <?php
 session_start();
-$is_admin = !empty($_SESSION['tipo']) && (int)$_SESSION['tipo'] === 1;
+$is_admin = !empty($_SESSION['tipo']) && (int) $_SESSION['tipo'] === 1;
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -63,17 +62,16 @@ $is_admin = !empty($_SESSION['tipo']) && (int)$_SESSION['tipo'] === 1;
             </div>
         </div>
         <div class="header-options">
+            <a href="http://localhost/projeto-cupcake/dreamcakes/carrinho/carrinho.php">
+                <img src="../images/icones/carrinho.png" alt="Carrinho"
+                    style="width:40px;vertical-align:middle;margin-left:10px;">
+            </a>
             <div class="dropdown">
                 <button class="dropdown-btn">
                     <img src="../images/icones/opcoes.png" alt="Opções"
                         style="width:50px;vertical-align:middle;margin-left:6px;">
                 </button>
                 <div class="dropdown-content">
-                    <a href="http://localhost/projeto-cupcake/dreamcakes/carrinho/carrinho.php"><span
-                            style="font-size:18px;">
-                            <img src="../images/icones/carrinho.png" alt="Carrinho"
-                                style="width:20px;vertical-align:middle;margin-left:6px;">
-                        </span> Carrinho</a>
                     <a href="http://localhost/projeto-cupcake/dreamcakes/carteira/carteira.php"><span
                             style="font-size:18px;">
                             <img src="../images/icones/carteira.png" alt="Carteira"
@@ -87,8 +85,9 @@ $is_admin = !empty($_SESSION['tipo']) && (int)$_SESSION['tipo'] === 1;
 
                     <?php if ($is_admin): ?>
                         <a href="http://localhost/projeto-cupcake/dreamcakes/admin/admin.php"><span style="font-size:18px;">
-                            <img src="../images/icones/cadeado.png" alt="Admin" style="width:20px;vertical-align:middle;margin-left:6px;">
-                        </span> Painel Admin</a>
+                                <img src="../images/icones/cadeado.png" alt="Admin"
+                                    style="width:20px;vertical-align:middle;margin-left:6px;">
+                            </span> Painel Admin</a>
                     <?php endif; ?>
 
                     <a href="http://localhost/projeto-cupcake/google-login/profile.php"><span style="font-size:18px;">
@@ -151,7 +150,7 @@ $is_admin = !empty($_SESSION['tipo']) && (int)$_SESSION['tipo'] === 1;
             <button onclick="closePopup()">Fechar</button>
         </div>
     </div>
-    
+
     <!-- popup de notificações-->
     <div id="notificacoes-popup" class="notificacoes-popup" style="display:none;">
         <div class="notificacoes-content">

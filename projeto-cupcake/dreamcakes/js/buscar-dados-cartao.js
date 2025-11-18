@@ -36,7 +36,7 @@ document.getElementById('formCartao').addEventListener('submit', function (e) {
     const bandeira = document.getElementById('bandeira-img').src.split('/').pop().split('.')[0];
 
     // Envia via AJAX para salvar_cartao.php
-    fetch('salvar_cartao.php', {
+    fetch('../carteira/salvar_cartao.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

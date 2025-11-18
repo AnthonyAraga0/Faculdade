@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'config.php';
+include '../config.php';
 
 $data = json_decode(file_get_contents('php://input'), true);
 $usuario_id = $_SESSION['google_id'] ?? 0;

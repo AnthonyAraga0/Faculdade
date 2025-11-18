@@ -1,5 +1,8 @@
     body {
       font-family: "Capriola", sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
       ;
       background-color: #fdd9d9;
       margin: 0;
@@ -330,10 +333,13 @@
     }
 
     .footer {
-      background-color: #fbc6c6;
-      padding: 15px;
+      margin-top: auto;
+      background: #f9caca;
       text-align: center;
-      margin-top: 20px;
+      padding: 18px 0;
+      font-size: 16px;
+      color: #4b2b20;
+      box-shadow: 0 -2px 10px rgba(75, 43, 32, 0.04);
     }
 
     /* POPUP */

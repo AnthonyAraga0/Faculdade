@@ -1,7 +1,6 @@
-
 <?php
 session_start();
-$is_admin = !empty($_SESSION['tipo']) && (int)$_SESSION['tipo'] === 1;
+$is_admin = !empty($_SESSION['tipo']) && (int) $_SESSION['tipo'] === 1;
 ?>
 
 <!DOCTYPE html>
@@ -27,9 +26,11 @@ $is_admin = !empty($_SESSION['tipo']) && (int)$_SESSION['tipo'] === 1;
                 style="width:20px;vertical-align:middle;margin-left:6px;">
             Você está em João Pessoa - PB ▼</span>
         <span class="top-icons">
-            <button class="notification-btn" title="Notificações" style="position:relative;background:transparent;border:none;cursor:pointer;">
+            <button class="notification-btn" title="Notificações"
+                style="position:relative;background:transparent;border:none;cursor:pointer;">
                 <img src="../images/icones/sino_branca.png" alt="Notificações" style="width:35px;">
-                <span id="notificacao-badge" style="display:none;position:absolute;top:-6px;right:-6px;background:#e94f4f;color:#fff;border-radius:50%;padding:2px 6px;font-size:12px;">0</span>
+                <span id="notificacao-badge"
+                    style="display:none;position:absolute;top:-6px;right:-6px;background:#e94f4f;color:#fff;border-radius:50%;padding:2px 6px;font-size:12px;">0</span>
             </button>
         </span>
     </div>
@@ -55,25 +56,33 @@ $is_admin = !empty($_SESSION['tipo']) && (int)$_SESSION['tipo'] === 1;
                         style="width:50px;vertical-align:middle;margin-left:6px;">
                 </button>
                 <div class="dropdown-content">
-                    <a href="http://localhost/projeto-cupcake/dreamcakes/carrinho/carrinho.php"><span style="font-size:18px;">
-                        <img src="../images/icones/carrinho.png" alt="Carrinho" style="width:20px;vertical-align:middle;margin-left:6px;">
-                    </span> Carrinho</a>
-                    <a href="http://localhost/projeto-cupcake/dreamcakes/carteira/carteira.php"><span style="font-size:18px;">
-                        <img src="../images/icones/carteira.png" alt="Carteira" style="width:20px;vertical-align:middle;margin-left:6px;">
-                    </span> Carteira</a>
-                    <a href="http://localhost/projeto-cupcake/dreamcakes/meu-perfil/meu-perfil.php"><span style="font-size:18px;">
-                        <img src="../images/icones/perfil.png" alt="Perfil" style="width:20px;vertical-align:middle;margin-left:6px;">
-                    </span> Meu Perfil</a>
+                    <a href="http://localhost/projeto-cupcake/dreamcakes/carrinho/carrinho.php"><span
+                            style="font-size:18px;">
+                            <img src="../images/icones/carrinho.png" alt="Carrinho"
+                                style="width:20px;vertical-align:middle;margin-left:6px;">
+                        </span> Carrinho</a>
+                    <a href="http://localhost/projeto-cupcake/dreamcakes/carteira/carteira.php"><span
+                            style="font-size:18px;">
+                            <img src="../images/icones/carteira.png" alt="Carteira"
+                                style="width:20px;vertical-align:middle;margin-left:6px;">
+                        </span> Carteira</a>
+                    <a href="http://localhost/projeto-cupcake/dreamcakes/meu-perfil/meu-perfil.php"><span
+                            style="font-size:18px;">
+                            <img src="../images/icones/perfil.png" alt="Perfil"
+                                style="width:20px;vertical-align:middle;margin-left:6px;">
+                        </span> Meu Perfil</a>
 
                     <?php if ($is_admin): ?>
                         <a href="http://localhost/projeto-cupcake/dreamcakes/admin/admin.php"><span style="font-size:18px;">
-                            <img src="../images/icones/cadeado.png" alt="Admin" style="width:20px;vertical-align:middle;margin-left:6px;">
-                        </span> Painel Admin</a>
+                                <img src="../images/icones/cadeado.png" alt="Admin"
+                                    style="width:20px;vertical-align:middle;margin-left:6px;">
+                            </span> Painel Admin</a>
                     <?php endif; ?>
-                                        
+
                     <a href="http://localhost/projeto-cupcake/google-login/profile.php"><span style="font-size:18px;">
-                        <img src="../images/icones/logoff.png" alt="Sair" style="width:20px;vertical-align:middle;margin-left:6px;">
-                    </span> Sair</a>
+                            <img src="../images/icones/logoff.png" alt="Sair"
+                                style="width:20px;vertical-align:middle;margin-left:6px;">
+                        </span> Sair</a>
                 </div>
             </div>
         </div>
@@ -109,13 +118,14 @@ $is_admin = !empty($_SESSION['tipo']) && (int)$_SESSION['tipo'] === 1;
 
             <div class="carrinho-endereco">
                 <label for="endereco">Endereço:</label>
-                <input id="endereco" type="text" disabled
-                    style="font-family: 'Capriola', Arial, sans-serif; font-size: 15px;width: 350px">
+                <input id="endereco" type="text"
+                    style="font-family: 'Capriola', Arial, sans-serif; font-size: 15px;width: 350px" required>
             </div>
             <div class="carrinho-cep">
                 <label for="cep">CEP:</label>
-                <input id="cep" type="text" disabled
-                    style="font-family: 'Capriola', Arial, sans-serif; font-size: 15px;width: 350px">
+                <input id="cep" type="text"
+                    style="font-family: 'Capriola', Arial, sans-serif; font-size: 15px;width: 350px" required
+                    maxlength="8" pattern="\d{8}">
             </div>
 
             <div class="carrinho-resumo-box">
@@ -160,6 +170,7 @@ $is_admin = !empty($_SESSION['tipo']) && (int)$_SESSION['tipo'] === 1;
     <script src="../js/listar_cartoes.js"></script>
     <script src="../js/finalizar_compra.js"></script>
     <script src="../js/notificacoes.js"></script>
+
 
 </body>
 

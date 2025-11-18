@@ -102,6 +102,7 @@ window.onload = function () {
 }
 
 function adicionarAoCarrinho(produtoId, quantidade) {
+    closeProdutoPopup();
     let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
     // Verifica se já existe o produto no carrinho
     const idx = carrinho.findIndex(item => item.id == produtoId);

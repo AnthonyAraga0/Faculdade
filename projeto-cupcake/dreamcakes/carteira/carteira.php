@@ -1,8 +1,6 @@
-
-
 <?php
 session_start();
-$is_admin = !empty($_SESSION['tipo']) && (int)$_SESSION['tipo'] === 1;
+$is_admin = !empty($_SESSION['tipo']) && (int) $_SESSION['tipo'] === 1;
 ?>
 
 <!DOCTYPE html>
@@ -28,9 +26,11 @@ $is_admin = !empty($_SESSION['tipo']) && (int)$_SESSION['tipo'] === 1;
                 style="width:20px;vertical-align:middle;margin-left:6px;">
             Você está em João Pessoa - PB ▼</span>
         <span class="top-icons">
-            <button class="notification-btn" title="Notificações" style="position:relative;background:transparent;border:none;cursor:pointer;">
+            <button class="notification-btn" title="Notificações"
+                style="position:relative;background:transparent;border:none;cursor:pointer;">
                 <img src="../images/icones/sino_branca.png" alt="Notificações" style="width:35px;">
-                <span id="notificacao-badge" style="display:none;position:absolute;top:-6px;right:-6px;background:#e94f4f;color:#fff;border-radius:50%;padding:2px 6px;font-size:12px;">0</span>
+                <span id="notificacao-badge"
+                    style="display:none;position:absolute;top:-6px;right:-6px;background:#e94f4f;color:#fff;border-radius:50%;padding:2px 6px;font-size:12px;">0</span>
             </button>
         </span>
     </div>
@@ -56,25 +56,33 @@ $is_admin = !empty($_SESSION['tipo']) && (int)$_SESSION['tipo'] === 1;
                         style="width:50px;vertical-align:middle;margin-left:6px;">
                 </button>
                 <div class="dropdown-content">
-                    <a href="http://localhost/projeto-cupcake/dreamcakes/carrinho/carrinho.php"><span style="font-size:18px;">
-                        <img src="../images/icones/carrinho.png" alt="Carrinho" style="width:20px;vertical-align:middle;margin-left:6px;">
-                    </span> Carrinho</a>
-                    <a href="http://localhost/projeto-cupcake/dreamcakes/carteira/carteira.php"><span style="font-size:18px;">
-                        <img src="../images/icones/carteira.png" alt="Carteira" style="width:20px;vertical-align:middle;margin-left:6px;">
-                    </span> Carteira</a>
-                    <a href="http://localhost/projeto-cupcake/dreamcakes/meu-perfil/meu-perfil.php"><span style="font-size:18px;">
-                        <img src="../images/icones/perfil.png" alt="Perfil" style="width:20px;vertical-align:middle;margin-left:6px;">
-                    </span> Meu Perfil</a>
+                    <a href="http://localhost/projeto-cupcake/dreamcakes/carrinho/carrinho.php"><span
+                            style="font-size:18px;">
+                            <img src="../images/icones/carrinho.png" alt="Carrinho"
+                                style="width:20px;vertical-align:middle;margin-left:6px;">
+                        </span> Carrinho</a>
+                    <a href="http://localhost/projeto-cupcake/dreamcakes/carteira/carteira.php"><span
+                            style="font-size:18px;">
+                            <img src="../images/icones/carteira.png" alt="Carteira"
+                                style="width:20px;vertical-align:middle;margin-left:6px;">
+                        </span> Carteira</a>
+                    <a href="http://localhost/projeto-cupcake/dreamcakes/meu-perfil/meu-perfil.php"><span
+                            style="font-size:18px;">
+                            <img src="../images/icones/perfil.png" alt="Perfil"
+                                style="width:20px;vertical-align:middle;margin-left:6px;">
+                        </span> Meu Perfil</a>
 
                     <?php if ($is_admin): ?>
                         <a href="http://localhost/projeto-cupcake/dreamcakes/admin/admin.php"><span style="font-size:18px;">
-                            <img src="../images/icones/cadeado.png" alt="Admin" style="width:20px;vertical-align:middle;margin-left:6px;">
-                        </span> Painel Admin</a>
+                                <img src="../images/icones/cadeado.png" alt="Admin"
+                                    style="width:20px;vertical-align:middle;margin-left:6px;">
+                            </span> Painel Admin</a>
                     <?php endif; ?>
-                                        
+
                     <a href="http://localhost/projeto-cupcake/google-login/profile.php"><span style="font-size:18px;">
-                        <img src="../images/icones/logoff.png" alt="Sair" style="width:20px;vertical-align:middle;margin-left:6px;">
-                    </span> Sair</a>
+                            <img src="../images/icones/logoff.png" alt="Sair"
+                                style="width:20px;vertical-align:middle;margin-left:6px;">
+                        </span> Sair</a>
                 </div>
             </div>
         </div>
@@ -185,6 +193,18 @@ $is_admin = !empty($_SESSION['tipo']) && (int)$_SESSION['tipo'] === 1;
     <script src="../js/dropdown.js"></script>
     <script src="../js/buscar-dados-cartao.js"></script>
     <script src="../js/notificacoes.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var validadeInput = document.getElementById('validade');
+            validadeInput.addEventListener('input', function (e) {
+                let v = this.value.replace(/\D/g, '');
+                if (v.length > 2) {
+                    v = v.slice(0, 2) + '/' + v.slice(2, 6);
+                }
+                this.value = v.slice(0, 7);
+            });
+        });
+    </script>
 
 </body>
 

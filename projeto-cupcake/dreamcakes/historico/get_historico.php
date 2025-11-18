@@ -4,7 +4,7 @@ include '../config.php';
 
 $usuario_id = $_SESSION['google_id'] ?? 0;
 
-$sql = "SELECT p.id as pedido_id, p.valor_total, p.data_pedido, c.bandeira, c.banco, pi.quantidade, pr.name as produto_nome, pr.image as produto_imagem
+$sql = "SELECT p.id as pedido_id, p.valor_total, p.data_pedido, c.bandeira, c.banco, pi.quantidade, pr.nome as produto_nome, pr.imagem as produto_imagem
         FROM pedidos p
         JOIN cartoes_credito c ON p.cartao_id = c.id
         JOIN pedido_itens pi ON pi.pedido_id = p.id

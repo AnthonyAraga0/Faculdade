@@ -33,14 +33,17 @@ $criacao = date('Y-m-d H:i:s');
 $metodo = 'Site';
 $is_blocked = 0;
 $is_admin = 0;
+$foto = '';
+$bloq = 0;
+$tipo = 0;
 
-$stmt = $conn->prepare("INSERT INTO usuarios (nome, email, cgc, endereco, cep, senha, criacao, metodo, bloq, tipo) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+$stmt = $conn->prepare("INSERT INTO usuarios (email, nome, foto, criacao, cgc, endereco, cep, senha, metodo, bloq, tipo) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 if (!$stmt) {
     // opcional: registrar erro real em log
     header('Location: register.php?error=stmt');
     exit;
 }
-$stmt->bind_param("sssssss", $email, $nome, $foto, $criacao, $metodo, $bloq, $tipo);
+$stmt->bind_param("sssssssssii", $email, $nome, $foto, $criacao, $cpf, $endereco, $cep, $hash, $metodo, $bloq, $tipo);
 $ok = $stmt->execute();
 $insertId = $stmt->insert_id;
 $stmt->close();

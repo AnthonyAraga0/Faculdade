@@ -45,7 +45,7 @@ foreach ($data['itens'] as $item) {
     // Busque o preço do produto
     $res = $conn->query("SELECT preco FROM produtos WHERE id = $produto_id");
     $row = $res->fetch_assoc();
-    $preco_unitario = $row ? $row['price'] : 0;
+    $preco_unitario = $row ? $row['preco'] : 0;
     $stmt2 = $conn->prepare("INSERT INTO pedido_itens (pedido_id, produto_id, quantidade, preco_unitario) VALUES (?, ?, ?, ?)");
     $stmt2->bind_param("iiid", $pedido_id, $produto_id, $quantidade, $preco_unitario);
     $stmt2->execute();

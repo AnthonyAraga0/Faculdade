@@ -8,6 +8,16 @@ document.getElementById('finalizar-compra-btn').addEventListener('click', functi
     const valor_total = document.getElementById('valor-total').textContent.replace('R$', '').replace(',', '.').trim();
     const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
 
+    if (!endereco) {
+        alert('Informe um Endereço para finalizar a compra.');
+        return;
+    }
+
+    if (!cep) {
+        alert('Informe um CEP para finalizar a compra.');
+        return;
+    }
+
     if (!cartaoSelecionado) {
         alert('Selecione um cartão para finalizar a compra.');
         return;

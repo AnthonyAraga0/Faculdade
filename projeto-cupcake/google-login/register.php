@@ -21,8 +21,8 @@
       <input id="email-field" name="email" class="input-field" type="email" placeholder="E-mail" required>
 
       <div class="field-row">
-        <input name="cpf_cnpj" id="cpf-field" class="input-field half" type="text" placeholder="CPF ou CNPJ" inputmode="numeric" required>
-        <input name="cep" id="cep-field" class="input-field half" type="text" placeholder="CEP" inputmode="numeric" required>
+        <input name="cpf_cnpj" id="cpf-field" class="input-field half" type="text" placeholder="CPF ou CNPJ" inputmode="numeric" required maxlength="14" pattern="\d{11}|\d{14}" title="Digite apenas números, até 14 dígitos">
+        <input name="cep" id="cep-field" class="input-field half" type="text" placeholder="CEP" inputmode="numeric" required maxlength="8" pattern="\d{8}" title="Digite apenas números, 8 dígitos">
       </div>
 
       <input name="endereco" class="input-field" type="text" placeholder="Endereço" required>
